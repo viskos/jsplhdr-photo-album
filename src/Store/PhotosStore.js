@@ -10,7 +10,7 @@ class PhotosStore {
         makeAutoObservable(this)
     }
 
-    getPhotos(id) {
+    fetchPhotos(id) {
         this.loading = true
         api.get(`photos?albumId=${id}`)
             .then((res) => (this.photos = res.data))
@@ -22,7 +22,7 @@ class PhotosStore {
 
     }
 
-    cleanPhotos() {
+    clearPhotos() {
         this.photos = []
     }
 }

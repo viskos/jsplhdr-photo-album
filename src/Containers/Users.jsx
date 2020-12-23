@@ -10,7 +10,7 @@ const Users = observer(() => {
     const {users, loading, error} = usersStore
 
     useEffect(() => {
-        usersStore.getUsers()
+        usersStore.fetchUsers()
 
         return () => {
             usersStore.clearUsers()

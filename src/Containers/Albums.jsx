@@ -15,10 +15,10 @@ const Albums = observer((props) => {
     const {albumLength} = coverStore
 
     useEffect(() => {
-        albumStore.getAlbums(props.match.params.id)
+        albumStore.fetchAlbums(props.match.params.id)
 
         return () => {
-            albumStore.cleanAlbums()
+            albumStore.clearAlbums()
         }
     }, [])
 

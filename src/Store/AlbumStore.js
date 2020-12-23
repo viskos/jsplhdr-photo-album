@@ -11,7 +11,7 @@ class AlbumStore {
         makeAutoObservable(this)
     }
 
-    getAlbums(id) {
+    fetchAlbums(id) {
         api.get(`albums?userId=${id}`)
             .then((res) => (this.albums = res.data))
             .then((k) => {
@@ -24,7 +24,7 @@ class AlbumStore {
             })
     }
 
-    cleanAlbums() {
+    clearAlbums() {
         this.loading = true
         this.albums = []
         this.quantity = 0

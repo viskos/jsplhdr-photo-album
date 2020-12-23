@@ -14,10 +14,10 @@ const Photos = observer((props) => {
     const {currentPhoto, isShow} = popupStore
 
     useEffect(() => {
-        photosStore.getPhotos(props.match.params.id)
+        photosStore.fetchPhotos(props.match.params.id)
 
         return () => {
-            photosStore.cleanPhotos()
+            photosStore.clearPhotos()
         }
     }, [])
 

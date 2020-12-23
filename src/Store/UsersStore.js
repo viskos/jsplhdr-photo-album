@@ -10,7 +10,7 @@ class UsersStore {
         makeAutoObservable(this)
     }
 
-    getUsers() {
+    fetchUsers() {
         this.loading = true
         api.get(`users`)
             .then((res) => (this.users = res.data))

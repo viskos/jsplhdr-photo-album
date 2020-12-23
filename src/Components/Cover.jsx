@@ -4,10 +4,10 @@ import {observer} from "mobx-react-lite";
 import {Loader} from "./Loader";
 
 const Cover = observer(({id, idx, quantity}) => {
-    const {loading, prevPhoto} = coverStore
+    const {loading, prevPhotos} = coverStore
 
     useEffect(() => {
-        coverStore.getPhotos(id, quantity)
+        coverStore.fetchPhotos(id, quantity)
         return () => {
             coverStore.clearPreviews()
         }
@@ -17,7 +17,7 @@ const Cover = observer(({id, idx, quantity}) => {
         <>
             {
                 !loading ?
-                    <img src={prevPhoto[idx][0].thumbnailUrl}/> :
+                    <img src={prevPhotos[idx][0].thumbnailUrl}/> :
                     <Loader />
             }
         </>

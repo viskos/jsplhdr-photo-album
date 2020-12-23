@@ -4,7 +4,7 @@ import {api} from '../api'
 class CoverStore {
     loading = true
     photos = []
-    prevPhoto = []
+    prevPhotos = []
     albumLength = null
     error = false
 
@@ -12,7 +12,7 @@ class CoverStore {
         makeAutoObservable(this)
     }
 
-    getPhotos(id, quantity) {
+    fetchPhotos(id, quantity) {
         api.get(`photos`)
             .then(res => this.photos = res.data)
             .then(done => this.getAlbumPreviews(id, quantity))
@@ -24,15 +24,15 @@ class CoverStore {
 
     getAlbumPreviews(id, quantity) {
         const previewPhotos = this.photos.filter(e => e.albumId === id)
-        this.prevPhoto.push(previewPhotos)
-        if (this.prevPhoto.length === quantity) {
-            this.albumLength = this.prevPhoto[0].length
+        this.prevPhotos.push(previewPhotos)
+        if (this.prevPhotos.length === quantity) {
+            this.albumLength = this.prevPhotos[0].length
             this.loading = false
         }
     }
 
     clearPreviews() {
-        this.prevPhoto = []
+        this.prevPhotos = []
         this.loading = true
     }
 }
