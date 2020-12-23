@@ -1,0 +1,26 @@
+.users {
+  text-align: center;
+  margin-top: 20px;
+
+  &__avatar {
+    width: 150px;
+    height: 150px;
+    background: #ccc;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+
+  &__item {
+    width: 300px;
+    cursor: pointer;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #111;
+
+    & p {
+      font-size: 18px;
+    }
+  }
+}

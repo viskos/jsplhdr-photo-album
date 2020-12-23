@@ -1,0 +1,11 @@
+.photos {
+
+  &__item {
+    margin: 5px;
+    cursor: zoom-in;
+
+    & img {
+      border-radius: 5px;
+    }
+  }
+}

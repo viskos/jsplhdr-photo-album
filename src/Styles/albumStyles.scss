@@ -1,0 +1,35 @@
+$cardWidthHeight: 300px;
+
+.album {
+
+  &__item {
+    width: $cardWidthHeight;
+    margin: 20px;
+    cursor: pointer;
+
+    & p {
+      margin: 5px 0;
+      font-weight: 600;
+    }
+
+    & img {
+      width: $cardWidthHeight;
+      height: $cardWidthHeight;
+      border-radius: 7px;
+    }
+  }
+
+  &__link {
+    color: #111;
+    text-decoration: none;
+  }
+
+  &__name {
+    font-size: 18px;
+  }
+
+  &__quantity {
+    font-size: 14px;
+    font-weight: normal;
+  }
+}
